@@ -12,3 +12,11 @@ class BasePage():
 
     def click_on_the_element(self, selector, selector_type=By.XPATH):
         return self.driver.find_element(selector_type, selector).click()
+
+    def get_page_title(self, url):
+        self.driver.get(url)
+        return self.driver.title
+
+    @classmethod
+    def setUp(cls, self):
+        pass
