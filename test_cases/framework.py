@@ -2,7 +2,6 @@ import os
 import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
-from webdriver_manager.chrome import ChromeDriverManager
 
 #from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
@@ -23,6 +22,7 @@ class TestMediumPage(unittest.TestCase):
         actual_title = self.get_page_title("https://medium.com/")
         expected_title = 'Medium - Where good ideas find you.'
         assert actual_title == expected_title
+
     def get_page_title(self, url):
         self.driver.get(url)
         return self.driver.title()
