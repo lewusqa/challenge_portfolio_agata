@@ -1,5 +1,7 @@
 import time
 
+from selenium.webdriver.common.by import By
+
 from pages.base_page import BasePage
 
 
@@ -13,7 +15,7 @@ class LoginPage(BasePage):
     login_url = "https://scouts-test.futbolkolektyw.pl/en"
     expected_title = "Scouts panel - sign in"
     title_of_header_xpath = "//*[@id='__next']/form/div/div[1]/h5"
-    excepted_header_of_box = 'Scouts panel - sign in'
+    expected_header_of_box = 'Scouts Panel'
     add_player_xpath = "//span[text()='Add player']"
 
     def type_in_email(self, email):
@@ -30,4 +32,5 @@ class LoginPage(BasePage):
         assert self.get_page_title(self.login_url) == self.expected_title
 
     def check_page_header(self):
-        self.assert_element_text(self.driver, self.title_of_header_xpath, self.excepted_header_of_box)
+        self.assert_element_text(self.driver, self.title_of_header_xpath, self.expected_header_of_box)
+
