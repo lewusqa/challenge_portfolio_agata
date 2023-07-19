@@ -30,3 +30,4 @@ class Dashboard(BasePage):
 
     def click_add_player(self):
         self.click_on_the_element(self.add_player_xpath)
+        assert self.get_page_title(self.add_a_player_url) == self.add_a_player_expected_title

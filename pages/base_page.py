@@ -34,6 +34,10 @@ class BasePage():
         element = wait.until(EC.element_to_be_clickable((locator_type, locator)))
         time.sleep(3)
 
+    def wait_for_visibility_of_element_located(self, locator, locator_type=DEFAULT_LOCATOR_TYPE):
+        wait = WebDriverWait(self.driver, 5)
+        element = wait.until(EC.visibility_of_element_located((locator_type, locator)))
+        time.sleep(3)
     @classmethod
     def setUp(cls, self):
         pass

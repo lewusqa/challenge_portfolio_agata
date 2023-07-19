@@ -4,13 +4,13 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-from pages.addaplayer import AddAplayer
+from pages.addaplayer import AddAPlayer
 from pages.login_page import LoginPage
 from pages.dashboard import Dashboard
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestAddPlayer(unittest.TestCase):
+class TestAddAPlayer(unittest.TestCase):
 
     @classmethod
     def setUp(self):
@@ -34,6 +34,7 @@ class TestAddPlayer(unittest.TestCase):
         add_player = AddAplayer(self.driver)
         #add_player.click_add_player()
         add_player.title_of_page()
+
     @classmethod
     def tearDown(self):
         self.driver.quit()
