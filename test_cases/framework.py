@@ -3,7 +3,7 @@ import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
-#from pages.login_page import LoginPage
+from pages.login_page import LoginPage
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
@@ -20,12 +20,12 @@ class TestMediumPage(unittest.TestCase):
 
     def test_check_title(self):
         actual_title = self.get_page_title("https://medium.com/")
-        expected_title = 'Medium - Where good ideas find you.'
+        expected_title = 'Medium – Where good ideas find you.'
         assert actual_title == expected_title
 
     def get_page_title(self, url):
         self.driver.get(url)
-        return self.driver.title()
+        return self.driver.title
 
     @classmethod
     def tearDown(self):
