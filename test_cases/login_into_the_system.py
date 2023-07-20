@@ -36,13 +36,7 @@ class TestLoginPage(unittest.TestCase):
         time.sleep(4)
         add_player = AddAPlayer(self.driver)
         time.sleep(2)
-        add_player.type_in_name('Agata')
-        user_login.wait_for_visibility_of_element_located()
-        add_player.type_in_surname('Kwiatkowska')
-        add_player.type_in_phone("+48 655 778 543")
-        add_player.type_in_weight("55")
-        add_player.type_in_club_name("MisWojtek")
-        time.sleep(3)
+
 
     @classmethod
     def tearDown(self):

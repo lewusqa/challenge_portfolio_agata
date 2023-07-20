@@ -13,7 +13,7 @@ class LoginPage(BasePage):
     remind_passwd_send_xpath = "//*[@id='__next']/div[1]/div/div[2]/button/span[1]"
     language_version_xpath = "//*[@id='__next']/form/div/div[2]/div/div"
     login_url = "https://scouts-test.futbolkolektyw.pl/en"
-    expected_title = "Scouts panel - sign in"
+    expected_title = "Scouts panel - log in"
     title_of_header_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     expected_header_of_box = 'Scouts Panel'
     add_player_xpath = "//div/div/a/button/span[1]"
@@ -49,6 +49,7 @@ class LoginPage(BasePage):
         self.field_send_keys(self.surname_xpath, surname)
 
         self.click_on_the_element(self.submit_button_xpath)
+
     def type_in_phone(self, phone):
         self.field_send_keys(self.phone_xpath, phone)
 
@@ -59,3 +60,4 @@ class LoginPage(BasePage):
         self.field_send_keys(self.club_field_xpath, club)
 
     def click_submit_button(self):
+        self.click_on_the_element(self.submit_button_xpath)

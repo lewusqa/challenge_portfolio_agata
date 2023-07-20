@@ -12,7 +12,7 @@ class Dashboard(BasePage):
     sign_out_xpath = "//*[@id='__next']/div[1]/div/div/div/ul[2]/div[2]/div[2]/span"
     additional_links_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/h2"
     activity_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[3]/div/div/h2"
-    add_player_xpath = "//span[text()='Add player']"
+    add_player_xpath = "//div/div/a/button/span[1]"
     last_created_player_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[3]/div/div/h6[1]"
     last_updated_player_xpath = "//a[contains(@href, 'pl/players/64a3002959040b463e2b5ac3/edit')]"
     last_created_match_xpath = "//a[contains(@href, '/pl/players/6026d92156c79737b3f3c62a/edit')]"
@@ -27,6 +27,7 @@ class Dashboard(BasePage):
     def title_of_page(self):
         self.wait_for_element_to_be_clickable(self.football_kolektyw_button_xpath)
         assert self.get_page_title(self.dashboard_url) == self.expected_title
+        #sprawdzic poprawnosc football_kolektyw, expected title
 
     def click_add_player(self):
         self.click_on_the_element(self.add_player_xpath)
