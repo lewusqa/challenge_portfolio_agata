@@ -1,7 +1,10 @@
-
+from selenium import webdriver
 from selenium.webdriver.support.wait import WebDriverWait
 from pages.base_page import BasePage
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.by import By
 
+driver = webdriver.Chrome()
 
 class Dashboard(BasePage):
     logo_scouts_panel_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[1]/div/div[1]"

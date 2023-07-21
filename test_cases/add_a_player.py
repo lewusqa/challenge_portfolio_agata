@@ -11,7 +11,6 @@ from pages.dashboard import Dashboard
 
 
 class TestAddAPlayer(unittest.TestCase):
-
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
