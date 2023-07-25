@@ -6,10 +6,11 @@ from selenium.webdriver.chrome.service import Service
 from pages.addaplayer import AddAPlayer
 from pages.login_page import LoginPage
 from pages.dashboard import Dashboard
+from pages.choose_the_leg import ChooseTheLeg
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
 
 
-class TestAddAPlayer(unittest.TestCase):
+class ChooseTheLeg(unittest.TestCase):
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
@@ -21,7 +22,7 @@ class TestAddAPlayer(unittest.TestCase):
         self.driver.fullscreen_window()
         self.driver.implicitly_wait(IMPLICITLY_WAIT)
 
-    def test_add_a_player_to_database(self):
+    def test_choose_the_leg(self):
         user_login = LoginPage(self.driver)
         user_login.title_of_page()
         user_login.type_in_email("user02@getnada.com")
@@ -32,22 +33,17 @@ class TestAddAPlayer(unittest.TestCase):
         #time.sleep(4)
         dashboard_page.click_add_player()
         dashboard_page.wait_for_element_to_be_clickable()
-        time.sleep(2)
         add_player = AddAPlayer(self.driver)
         #add_player.click_add_player()
         add_player.title_of_page()
         time.sleep(2)
+        select_leg = ChooseTheLeg(self.driver)
         #self.driver.save_screenshot("")
         #image.open().show()
-        add_player.wait_for_visibility_of_element_located()
-        add_player.type_in_name('Agata')
-        add_player.type_in_surname('Lewandowska')
-        add_player.type_in_phone("+48 655 778 543")
-        add_player.type_in_weight("55")
-        add_player.type_in_club_name("MisWojtek")
-        add_player.type_in_main_position('goalkeeper')
-        add_player.type_in_age(35)
-        add_player.click_submit_button()
+        select_leg.title_of_page()
+        select_leg.wait_for_visibility_of_element_located()
+        select_leg.select_leg("right")
+        select_leg.click_submit_button()
         # dodac sprawdzenie czy player sie dodal na dashboardzie - ostatnio dodany zawodnik
         # czy imie i nazwisko zgadza sie z tym co dodalismy
         time.sleep(3)

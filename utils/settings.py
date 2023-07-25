@@ -29,3 +29,4 @@ else:
     CHROME_DRIVER = 'chromedriver'
     FIREFOX_DRIVER = 'geckodriver'
     EDGE_DRIVER = 'MicrosoftWebDriver.exe'
+
