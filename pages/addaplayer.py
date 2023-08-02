@@ -4,7 +4,8 @@ from pages.base_page import BasePage
 
 class AddAPlayer(BasePage):
     login_field_xpath = "//*[@id='login']"
-    add_player_xpath = "//*[text()='Add player']"
+    #add_player_xpath = "//*[text()='Add player']"
+    add_player_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[1]/div/span"
     email_xpath = "//div[2]/div/div[1]/div/div/input"
     name_xpath = "//*[@name='name']"
     surname_xpath = "//*[@name='surname']"
@@ -26,10 +27,12 @@ class AddAPlayer(BasePage):
     submit_button_xpath = "//button[@type='submit']"
     clear_xpath = "//span[text()='Clear']"
     add_a_player_expected_title = "Add player"
-    add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    #add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
     #dashboard_url = "https://scouts-test.futbolkolektyw.pl/login"
-    expected_title = "Scouts panel - sign in"
+    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
+    add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
+    expected_title = "Scouts panel"
     def type_in_name(self, name):
         self.field_send_keys(self.name_xpath, name)
 

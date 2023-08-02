@@ -14,15 +14,18 @@ class Dashboard(BasePage):
     language_version_xpath = "//*[@class='MuiListItemText-root']/span"
     sign_out_xpath = "//span[text()='Sign out']"
     activity_xpath = "//div[1]/main/div[3]/div[3]/div/div/h2"
-    add_player_xpath = "//*[text()='Add player']"
+    #add_player_xpath = "//*[text()='Add player']"
+    add_player_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[1]/div/span"
     shortcuts_xpath = "//*[text()='Shortcuts']"
     players_count_xpath = "//*[text()='Players count']"
     matches_count_xpath = "//*[text()='Matches count']"
     reports_count_xpath = "//*[text()='Reports count']"
     events_count_xpath = "//*[text()='Events count']"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
     expected_title = "Scouts panel"
-    add_a_player_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add'
+    #add_a_player_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add'
+    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
+    add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
     add_a_player_expected_title = "Add player"
     wait = WebDriverWait(driver, 10)
 

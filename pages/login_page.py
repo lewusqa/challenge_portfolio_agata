@@ -4,7 +4,6 @@ from selenium.webdriver.common.by import By
 
 from pages.base_page import BasePage
 
-
 class LoginPage(BasePage):
     login_field_xpath = "//*[@id='login']"
     password_field_xpath = "//*[@id='password']"
@@ -12,7 +11,7 @@ class LoginPage(BasePage):
     remind_passwd_xpath = "//*[@id='__next']/form/div/div[1]/a"
     remind_passwd_send_xpath = "//*[@id='__next']/div[1]/div/div[2]/button/span[1]"
     language_version_xpath = "//*[@id='__next']/form/div/div[2]/div/div"
-    login_url = "https://scouts-test.futbolkolektyw.pl/en/login"
+    #login_url = "https://scouts-test.futbolkolektyw.pl/en/login"
     expected_title = "Scouts panel - sign in"
     title_of_header_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     expected_header_of_box = 'Scouts Panel'
@@ -25,7 +24,7 @@ class LoginPage(BasePage):
     #height_xpath = "//*[@name='height']"
     #club_field_xpath = "//input[@name='club']"
     #submit_button_xpath = "//button[@type='submit']"
-
+    login_url = "https://dareit.futbolkolektyw.pl/en/login"
 
     def title_of_page(self):
         self.wait_for_element_to_be_clickable(self.login_field_xpath)

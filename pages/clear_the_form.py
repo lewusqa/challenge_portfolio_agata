@@ -10,7 +10,8 @@ class ClearForm(BasePage):
     weight_xpath = "//*[@name='weight']"
     height_xpath = "//*[@name='height']"
     clear_button_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[3]/button[2]/span[1]"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
     expected_title = "Scouts Panel"
 
     def type_in_weight(self, weight):
