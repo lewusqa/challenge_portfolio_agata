@@ -76,3 +76,6 @@ https://github.com/lewusqa/panelscout_robotframework
 https://github.com/lewusqa/challenge_portfolio_agata
 
 
+Linkedin:
+https://www.linkedin.com/in/agata-lewandowska-158424189/
+
