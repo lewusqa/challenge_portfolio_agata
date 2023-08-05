@@ -11,7 +11,7 @@ class LoginPage(BasePage):
     remind_passwd_xpath = "//*[@id='__next']/form/div/div[1]/a"
     remind_passwd_send_xpath = "//*[@id='__next']/div[1]/div/div[2]/button/span[1]"
     language_version_xpath = "//*[@id='__next']/form/div/div[2]/div/div"
-    login_url = "https://scouts-test.futbolkolektyw.pl/en/login"
+    #login_url = "https://scouts-test.futbolkolektyw.pl/en/login"
     expected_title = "Scouts panel - sign in"
     title_of_header_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     expected_header_of_box = 'Scouts Panel'

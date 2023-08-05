@@ -3,9 +3,11 @@ import time
 from pages.base_page import BasePage
 
 class AddAPlayer(BasePage):
-    login_field_xpath = "//*[@id='login']"
+    login_button_xpath = "//*[@id='login']"
+    football_kolektyw_xpath = '//*[@id="__next"]/div[1]/main/div[3]/div[1]/div/div[2]/h2'
     #add_player_xpath = "//*[text()='Add player']"
-    add_player_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[1]/div/span"
+    #add_player_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[1]/div/span"
+    add_player_xpath = "//*[@id='__next']/div[1]/main/div[3]/div[2]/div/div/a/button/span[1]"
     email_xpath = "//div[2]/div/div[1]/div/div/input"
     name_xpath = "//*[@name='name']"
     surname_xpath = "//*[@name='surname']"
@@ -27,11 +29,11 @@ class AddAPlayer(BasePage):
     submit_button_xpath = "//button[@type='submit']"
     clear_xpath = "//span[text()='Clear']"
     add_a_player_expected_title = "Add player"
-    add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
-    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    #add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
     #dashboard_url = "https://scouts-test.futbolkolektyw.pl/login"
-    #dashboard_url = "https://dareit.futbolkolektyw.pl/en"
-    #add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
+    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
+    add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
     expected_title = "Scouts panel"
     def type_in_name(self, name):
         self.field_send_keys(self.name_xpath, name)
@@ -58,9 +60,16 @@ class AddAPlayer(BasePage):
         self.click_on_the_element(self.submit_button_xpath)
 
     def title_of_page(self):
-        self.wait_for_element_to_be_clickable(self.login_field_xpath)
-        assert self.get_page_title(self.dashboard_url) == self.expected_title
+        check_title = self.get_page_title(self.add_a_player_url)
+        print("check title:", check_title)
+        print("add_a_player_expected_title", self.add_a_player_expected_title)
+        self.wait_for_element_to_be_clickable(self.submit_button_xpath)
+        assert check_title == self.add_a_player_expected_title
 
-    def click_add_player(self):
-        self.click_on_the_element(self.add_player_xpath)
-        assert self.get_page_title(self.add_a_player_url) == self.add_a_player_expected_title
+    #def click_add_player(self):
+     #   self.click_on_the_element(self.add_player_xpath)
+     #   assert self.get_page_title(self.add_a_player_url) == self.add_a_player_expected_title
+    def test_add_a_player_to_database(self):
+        add_player = AddAPlayer(self.driver)
+        add_player.get_page_title(add_player.add_a_player_url)
+        time.sleep(3)
