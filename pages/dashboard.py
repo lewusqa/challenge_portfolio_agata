@@ -21,10 +21,10 @@ class Dashboard(BasePage):
     matches_count_xpath = "//*[text()='Matches count']"
     reports_count_xpath = "//*[text()='Reports count']"
     events_count_xpath = "//*[text()='Events count']"
-    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
     expected_title = "Scouts panel"
     #add_a_player_url = 'https://scouts-test.futbolkolektyw.pl/en/players/add'
-    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
+    #dashboard_url = "https://dareit.futbolkolektyw.pl/en"
     add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
     add_a_player_expected_title = "Add player"
     wait = WebDriverWait(driver, 10)
