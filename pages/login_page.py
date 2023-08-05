@@ -15,16 +15,16 @@ class LoginPage(BasePage):
     expected_title = "Scouts panel - sign in"
     title_of_header_xpath = "//*[@id='__next']/form/div/div[1]/h5"
     expected_header_of_box = 'Scouts Panel'
-    #add_player_xpath = "//*[text()='Add player']"
-    #email_xpath = "//div[2]/div/div[1]/div/div/input"
-    #name_xpath = "//*[@name='name']"
-    #surname_xpath = "//*[@name='surname']"
-    #phone_xpath = "//*[@name='phone']"
-    #weight_xpath = "//*[@name='weight']"
-    #height_xpath = "//*[@name='height']"
-    #club_field_xpath = "//input[@name='club']"
-    #submit_button_xpath = "//button[@type='submit']"
-    #login_url = "https://dareit.futbolkolektyw.pl/en/login"
+    add_player_xpath = "//*[@id='__next']/div[1]/main/div[2]/form/div[1]/div/span"
+    email_xpath = "//div[2]/div/div[1]/div/div/input"
+    name_xpath = "//*[@name='name']"
+    surname_xpath = "//*[@name='surname']"
+    phone_xpath = "//*[@name='phone']"
+    weight_xpath = "//*[@name='weight']"
+    height_xpath = "//*[@name='height']"
+    club_field_xpath = "//input[@name='club']"
+    submit_button_xpath = "//button[@type='submit']"
+    login_url = "https://dareit.futbolkolektyw.pl/en/login"
 
     def title_of_page(self):
         self.wait_for_element_to_be_clickable(self.login_field_xpath)

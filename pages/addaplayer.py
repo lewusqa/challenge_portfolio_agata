@@ -27,11 +27,11 @@ class AddAPlayer(BasePage):
     submit_button_xpath = "//button[@type='submit']"
     clear_xpath = "//span[text()='Clear']"
     add_a_player_expected_title = "Add player"
-    #add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
-    #dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
+    add_a_player_url = "https://scouts-test.futbolkolektyw.pl/en/players/add"
+    dashboard_url = "https://scouts-test.futbolkolektyw.pl/en"
     #dashboard_url = "https://scouts-test.futbolkolektyw.pl/login"
-    dashboard_url = "https://dareit.futbolkolektyw.pl/en"
-    add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
+    #dashboard_url = "https://dareit.futbolkolektyw.pl/en"
+    #add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
     expected_title = "Scouts panel"
     def type_in_name(self, name):
         self.field_send_keys(self.name_xpath, name)
