@@ -35,6 +35,7 @@ class AddAPlayer(BasePage):
     dashboard_url = "https://dareit.futbolkolektyw.pl/en"
     add_a_player_url = "https://dareit.futbolkolektyw.pl/en/players/add"
     expected_title = "Scouts panel"
+    #main_page_xpath = "//span[text()='Main page']"
     def type_in_name(self, name):
         self.field_send_keys(self.name_xpath, name)
 
@@ -76,3 +77,6 @@ class AddAPlayer(BasePage):
         add_player = AddAPlayer(self.driver)
         add_player.get_page_title(add_player.add_a_player_url)
         time.sleep(3)
+
+    #def last_created_player(self):
+    #    self.click_on_the_element(self.main_page_xpath)

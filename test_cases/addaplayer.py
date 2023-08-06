@@ -42,8 +42,8 @@ class TestAddAPlayer(unittest.TestCase):
         driver.get("https://dareit.futbolkolektyw.pl/en/players/add")
         driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\addaplayer_scrn.png")
         #add_player.wait_for_visibility_of_element_located()
-        add_player.type_in_name('Mela')
-        add_player.type_in_surname('Lewandowska')
+        add_player.type_in_name('Agata')
+        add_player.type_in_surname('Panek')
         add_player.type_in_phone("+48 655 778 543")
         add_player.type_in_weight("55")
         add_player.type_in_club_name("MisWojtek")
@@ -51,10 +51,15 @@ class TestAddAPlayer(unittest.TestCase):
         add_player.type_in_age("30/07/1990")
         add_player.type_in_previous_club("Star Wars")
         add_player.title_of_page()
-        driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\player_added_scrn.png")
+        driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\player_added_scrn.png"
         add_player.click_submit_button()
+        #Verify that the player's full name is displayed on the dashboard.
+        #add_player.last_created_player()
+        # Find the element that represents the last created player in the activity
+        #last_created_player_element = driver.find_element(By.XPATH,"//*[@id='__next']/div[1]/main/div[3]/div[3]/div/div/a[1]/button/span[1]")
+        #assert last_created_player_element is not None, "Last created player not found in the Activity tab."
         #driver.get("https://dareit.futbolkolektyw.pl/en/")
-        # Verify that the player's full name is displayed on the dashboard.
+
         time.sleep(2)
 
 

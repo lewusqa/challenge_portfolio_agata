@@ -6,11 +6,12 @@ from selenium.webdriver.chrome.service import Service
 from pages.addaplayer import AddAPlayer
 from pages.login_page import LoginPage
 from pages.dashboard import Dashboard
+from pages.base_page import BasePage
 from pages.choose_the_leg import ChooseTheLeg
 from utils.settings import DRIVER_PATH, IMPLICITLY_WAIT
+driver = webdriver.Chrome()
 
-
-class ChooseTheLeg(unittest.TestCase):
+class TestChooseTheLeg(unittest.TestCase):
     @classmethod
     def setUp(self):
         os.chmod(DRIVER_PATH, 755)
@@ -28,26 +29,44 @@ class ChooseTheLeg(unittest.TestCase):
         user_login.title_of_page()
         user_login.type_in_email("user02@getnada.com")
         user_login.type_in_password("Test-1234")
+        user_login.wait_for_element_to_be_clickable('//span[text() = "Sign in"]')
         user_login.click_on_the_sign_in_button()
         dashboard_page = Dashboard(self.driver)
-        #dashboard_page.title_of_page()
-        #time.sleep(4)
+        dashboard_page.title_of_page()
+        time.sleep(4)
         dashboard_page.click_add_player()
-        dashboard_page.wait_for_element_to_be_clickable()
         add_player = AddAPlayer(self.driver)
-        #add_player.click_add_player()
-        add_player.title_of_page()
-        time.sleep(2)
+        #time.sleep(2)
+        add_player.test_add_a_player_to_database()
+        #driver.get("https://dareit.futbolkolektyw.pl/en/players/add")
+        #driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\addaplayer_scrn.png")
+        add_player.type_in_name('Agata')
+        add_player.type_in_surname('Panek')
+        add_player.type_in_phone("+48 655 778 543")
+        add_player.type_in_weight("55")
+        add_player.type_in_club_name("MisWojtek")
+        add_player.type_in_main_position('goalkeeper')
+        add_player.type_in_age("30/07/1990")
+        add_player.type_in_previous_club("Star Wars")
         select_leg = ChooseTheLeg(self.driver)
-        #self.driver.save_screenshot("")
-        #image.open().show()
-        select_leg.title_of_page()
-        select_leg.wait_for_visibility_of_element_located()
-        select_leg.select_leg("right")
+        #time.sleep(2)
+        select_leg.wait_for_visibility_of_element_located ("//*[@id='mui-component-select-leg']")
+        #select_leg.title_of_page()
+        select_leg.select_leg("left")
+
+        #driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\player_added_scrn.png")
+        #select_leg = ChooseTheLeg(self.driver)
+        #time.sleep(2)
+        #select_leg.wait_for_visibility_of_element_located()
+        #select_leg.select_leg("right")
+        driver.save_screenshot(r"C:\Users\lewan\OneDrive\Dokumenty\GitHub\project\challenge_portfolio_agata\test_cases\screenshots\add_a_player\selected_the_leg_scrn.png")
         select_leg.click_submit_button()
-        # dodac sprawdzenie czy player sie dodal na dashboardzie - ostatnio dodany zawodnik
-        # czy imie i nazwisko zgadza sie z tym co dodalismy
-        time.sleep(3)
+        time.sleep(10)
+        #self.click_on_the_element("//span[text()='Main page']")
+        select_leg.click_main_page()
+        player_name="Agata Panek"
+        select_leg.check_last_added_player(player_name)
+
 
     @classmethod
     def tearDown(self):
