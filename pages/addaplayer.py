@@ -1,7 +1,6 @@
-import time
 
 from pages.base_page import BasePage
-
+import time
 class AddAPlayer(BasePage):
     login_button_xpath = "//*[@id='login']"
     football_kolektyw_xpath = '//*[@id="__next"]/div[1]/main/div[3]/div[1]/div/div[2]/h2'
@@ -21,6 +20,7 @@ class AddAPlayer(BasePage):
     second_position_xpath = "//input[@name='secondPosition']"
     district_xpath = "//input[@name='district']"
     achievements_xpath = "//input[@name='achievements']"
+    previous_club_xpath = "//input[@name='prevClub']"
     add_language = "//span[@class='MuiButton-label']"
     laczy_nas_pilka_xpath = "//input[@name='webLaczy']"
     min_xpath = "//input[@name='web90']"
@@ -55,6 +55,9 @@ class AddAPlayer(BasePage):
 
     def type_in_age(self, age):
         self.field_send_keys(self.age_xpath, age)
+
+    def type_in_previous_club(self,previous_club):
+        self.field_send_keys(self.previous_club_xpath, previous_club)
 
     def click_submit_button(self):
         self.click_on_the_element(self.submit_button_xpath)
